@@ -6,6 +6,30 @@ import SearchBar from '../SearchBar/SearchBar.jsx';
 import SearchResults from '../SearchResults/SearchResults.jsx';
 
 class App extends React.Component {
+  constructor(props){
+    super(props);
+      this.state = {
+        // here we are hard coding song info
+        searchResults: [{
+          name: 'Hurricane',
+          artist: 'Luke Combs',
+          album: 'This one for you',
+          id: 1
+        },
+        {
+          name: 'Body like a Back Road',
+          artist: 'Sam Hunt',
+          album: 'Southside',
+          id: 2
+        },
+        {
+          name: 'Show Me',
+          artist: 'Alina Baraz',
+          album: 'Urban Flora',
+          id: 3
+        }]
+      }
+  }
   render() {
     return (
       <div>
@@ -13,7 +37,7 @@ class App extends React.Component {
         <div className="App">
           <SearchBar />
           <div className="App-playlist">
-            <SearchResults />
+            <SearchResults searchResults={this.state.searchResults}/>
             <Playlist />
           </div>
         </div>
